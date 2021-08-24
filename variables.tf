@@ -12,14 +12,12 @@ variable "private_key_path" {
 }
 
 variable "region" {
+  default = "sa-saopaulo-1"
 }
 
-variable "ad_region_mapping" {
-  type = map(string)
-
-  default = {
-    sa-saopaulo-1 = 1
-  }
+variable "ad_number" {
+  type    = number
+  default = 1
 }
 
 variable "ssh_public_key" {
