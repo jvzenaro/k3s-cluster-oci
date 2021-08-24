@@ -1,7 +1,7 @@
-resource "oci_core_instance" "cluster-worker-node01" {
+resource "oci_core_instance" "cluster_worker_node01" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.k3s_compartment.compartment_id
-  display_name        = "cluster-worker-node01"
+  display_name        = "cluster_worker_node01"
   shape               = "VM.Standard.A1.Flex"
   shape_config {
     memory_in_gbs = 8
@@ -12,7 +12,7 @@ resource "oci_core_instance" "cluster-worker-node01" {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
     display_name     = "Vnic Cluster Worker Node 01"
     assign_public_ip = false
-    hostname_label   = "cluster-worker-1"
+    hostname_label   = "cluster_worker_1"
   }
 
   source_details {
@@ -25,10 +25,10 @@ resource "oci_core_instance" "cluster-worker-node01" {
   }
 }
 
-resource "oci_core_instance" "cluster-worker-node02" {
+resource "oci_core_instance" "cluster_worker_node02" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.k3s_compartment.compartment_id
-  display_name        = "cluster-worker-node02"
+  display_name        = "cluster_worker_node02"
   shape               = "VM.Standard.A1.Flex"
   shape_config {
     memory_in_gbs = 8
@@ -39,7 +39,7 @@ resource "oci_core_instance" "cluster-worker-node02" {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
     display_name     = "Vnic Cluster Worker Node 01"
     assign_public_ip = false
-    hostname_label   = "cluster-worker-2"
+    hostname_label   = "cluster_worker_2"
   }
 
   source_details {
