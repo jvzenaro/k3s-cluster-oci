@@ -11,8 +11,8 @@ resource "oci_core_instance" "cluster_worker_node01" {
   create_vnic_details {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
     display_name     = "Vnic Cluster Worker Node 01"
-    assign_public_ip = false
-    hostname_label   = "cluster_worker_1"
+    assign_public_ip = true
+    hostname_label   = "clusterworker1"
   }
 
   source_details {
@@ -37,9 +37,9 @@ resource "oci_core_instance" "cluster_worker_node02" {
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
-    display_name     = "Vnic Cluster Worker Node 01"
-    assign_public_ip = false
-    hostname_label   = "cluster_worker_2"
+    display_name     = "Vnic Cluster Worker Node 02"
+    assign_public_ip = true
+    hostname_label   = "clusterworker2"
   }
 
   source_details {

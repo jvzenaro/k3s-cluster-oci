@@ -14,7 +14,7 @@ resource "oci_core_instance" "cluster_master_node01" {
     subnet_id        = oci_core_subnet.k3s_vcn_public_subnet.id
     display_name     = "Vnic Cluster Master Node 01"
     assign_public_ip = true
-    hostname_label   = "cluster_master_1"
+    hostname_label   = "clustermaster1"
   }
 
   source_details {
@@ -40,8 +40,8 @@ resource "oci_core_instance" "cluster_master_node02" {
   create_vnic_details {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
     display_name     = "Vnic Cluster Master Node 02"
-    hostname_label   = "cluster_master_2"
-    assign_public_ip = false
+    hostname_label   = "clustermaster2"
+    assign_public_ip = true
   }
 
   source_details {

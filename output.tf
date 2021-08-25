@@ -1,5 +1,8 @@
-output "cluster_master_public_ip" {
-  value = oci_core_instance.cluster_master_node01.public_ip
+output "cluster_public_ips" {
+  value = [oci_core_instance.cluster_master_node01.public_ip,
+    oci_core_instance.cluster_master_node02.public_ip,
+    oci_core_instance.cluster_worker_node01.public_ip,
+  oci_core_instance.cluster_worker_node02.public_ip]
 }
 
 output "cluster_private_ips" {

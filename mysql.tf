@@ -12,7 +12,7 @@ resource "oci_core_instance" "k3s_mysql" {
     subnet_id        = oci_core_subnet.k3s_vcn_private_subnet.id
     display_name     = "Vnic Mysql"
     assign_public_ip = false
-    hostname_label   = "k3s_mysql"
+    hostname_label   = "k3smysql"
   }
 
   source_details {

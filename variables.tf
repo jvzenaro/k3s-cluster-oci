@@ -32,3 +32,7 @@ variable "images" {
     amd = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaaocax5uxxfuum6rgpnlymsustzdcdejilsrnxkc2cgt4mmg3fbsnq"
   }
 }
+
+variable "hostname" {
+  type = string
+}
