@@ -8,6 +8,7 @@ ${ip}
 ${ip}
 %{ endfor ~}
 
+
 [k3s_cluster:children]
 master
 node
