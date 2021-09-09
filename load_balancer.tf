@@ -50,34 +50,34 @@ resource "oci_load_balancer_listener" "k3s_load_balancer_listener" {
   }
 }
 
-resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_master_01" {
-  #Required
+resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_master" {
+  #Required 
   backendset_name  = oci_load_balancer_backend_set.k3s_load_balancer_backend_set.name
-  ip_address       = oci_core_instance.cluster_master_node01.private_ip
+  ip_address       = oci_core_instance.cluster_master.private_ip
   load_balancer_id = oci_load_balancer.k3s_load_balancer.id
   port             = "80"
 }
 
-resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_master_02" {
+resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_worker_1" {
   #Required
   backendset_name  = oci_load_balancer_backend_set.k3s_load_balancer_backend_set.name
-  ip_address       = oci_core_instance.cluster_master_node02.private_ip
+  ip_address       = oci_core_instance.cluster_worker_1.private_ip
   load_balancer_id = oci_load_balancer.k3s_load_balancer.id
   port             = "80"
 }
 
-resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_worker_01" {
+resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_worker_2" {
   #Required
   backendset_name  = oci_load_balancer_backend_set.k3s_load_balancer_backend_set.name
-  ip_address       = oci_core_instance.cluster_worker_node01.private_ip
+  ip_address       = oci_core_instance.cluster_worker_2.private_ip
   load_balancer_id = oci_load_balancer.k3s_load_balancer.id
   port             = "80"
 }
 
-resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_worker_02" {
+resource "oci_load_balancer_backend" "k3s_load_balancer_cluster_worker_3" {
   #Required
   backendset_name  = oci_load_balancer_backend_set.k3s_load_balancer_backend_set.name
-  ip_address       = oci_core_instance.cluster_worker_node02.private_ip
+  ip_address       = oci_core_instance.cluster_worker_3.private_ip
   load_balancer_id = oci_load_balancer.k3s_load_balancer.id
   port             = "80"
 }

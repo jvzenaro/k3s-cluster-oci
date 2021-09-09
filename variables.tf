@@ -36,3 +36,9 @@ variable "images" {
 variable "hostname" {
   type = string
 }
+
+
+variable "user_ssh" {
+  type    = string
+  default = "ubuntu"
+}

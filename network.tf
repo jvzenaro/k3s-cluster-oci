@@ -39,22 +39,14 @@ resource "oci_core_security_list" "k3s_vcn_security_list_public" {
   }
 
   ingress_security_rules {
-    protocol = "1"
+    protocol = "6"
     source   = "0.0.0.0/0"
-    icmp_options {
-      type = 3
-      code = 4
+
+    tcp_options {
+      max = "80"
+      min = "80"
     }
   }
-
-  ingress_security_rules {
-    protocol = "1"
-    source   = "10.0.0.0/16"
-    icmp_options {
-      type = 3
-    }
-  }
-
   egress_security_rules {
     protocol    = "6"
     destination = "0.0.0.0/0"
